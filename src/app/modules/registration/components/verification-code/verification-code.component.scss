@@ -1,0 +1,65 @@
+.main {
+  .modal {
+    min-height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    letter-spacing: 0px;
+  }
+
+  .image {
+    width: fit-content;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #454C66;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-size: 16px;
+    color: #747A88;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #747A88;
+
+    .number {
+      font-size: 16px;
+      font-weight: 700;
+      color: #6AC7BB;
+    }
+  }
+}
+
+
+:host {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+::ng-deep .ng-otp-input-wrapper .otp-input:not(:last-child) {
+  margin-right: 20px !important;
+}
+
+
+::ng-deep .otp-input {
+  width: 90px !important;
+}
+
+.error {
+  color: #F3446C;
+  text-align: center;
+}

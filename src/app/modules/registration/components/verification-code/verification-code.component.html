@@ -1,0 +1,32 @@
+<div class="main ">
+  <div class="modal fade show d-block pt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <div class="mt-4 image mx-auto">
+            <img src="/assets/images/Group 14.svg" alt="verify">
+          </div>
+          <h3 class="mt-4">Verification Code</h3>
+          <p class="px-5 my-4">
+            Please enter the verification code sent to your phone number ** 34
+          </p>
+          <div class="container d-flex mb-4 ms-3">
+
+            <ng-otp-input [config]="{length: 4, allowNumbersOnly: true}"
+              (onInputChange)="onOtpChange($event)"></ng-otp-input>
+          </div>
+          <div class="error mb-3" *ngIf="!notvalid&&clicked">
+            not valid code
+          </div>
+          <span>
+            The code will be sent again within <span class="number">59</span> seconds
+          </span>
+        </div>
+        <button class="btn d-block py-2 mx-auto mt-4 mb-5" (click)="submitOtp()">
+          VERIFY
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

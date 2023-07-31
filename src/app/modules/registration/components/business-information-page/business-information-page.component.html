@@ -1,0 +1,200 @@
+<div class="container-fluid">
+  <div class="row main">
+    <div class="col-lg-4 image ">
+      <div class="my-5 ps-1">
+        <img src="/assets/images/Group 22.svg" class="ps-5">
+      </div>
+      <div class="mt-5 pt-2 m-auto title">
+        <h2 class="fw-bold text-white mb-3">
+          Few clicks away <br>
+          from creating your business
+        </h2>
+        <span class="pt-4">
+          Start your business in minutes.
+          <br>
+          save time and money
+        </span>
+      </div>
+    </div>
+    <div class="col-lg-8 form">
+      <div class="container">
+        <div class="p-5 ">
+          <div class="first-section d-flex justify-content-end">
+            <p>Having troubles? <span class="fw-bold">Get Help</span></p>
+          </div>
+          <div class="second-section">
+            <h2 class="fw-bold">Choose the type of business</h2>
+            <div class="line"></div>
+          </div>
+          <div class="third-section">
+            <p>
+              To get start tell us what type of Business you are going to
+              <br>
+              incorporate and name
+            </p>
+          </div>
+          <div class="myForm">
+            <form [formGroup]="form" (ngSubmit)="submit(form)">
+              <div class=" mb-3">
+                <div>
+                  <label class="mb-1">Business Type</label>
+                  <input type="text" class="form-control " id="BType" placeholder="Enter your business type"
+                    formControlName="BType" [ngClass]="{
+              'invalid':
+              formControls['BType'].errors &&
+              formControls['BType'].touched
+              }">
+
+                </div>
+                <div class="error" *ngIf=" formControls['BType'].errors &&
+            formControls['BType'].touched">
+                  <span>Please enter letters only</span>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <div class="bg-white checkbox checkbox1 p-2 rounded-2" [ngClass]="
+                    !formControls['Salon'].value?'bg-white':'bg-transparent'
+                    ">
+                    <div class="text-center">
+                      <input type="checkbox" class="form-check-input p-3" id="validationFormCheck1"
+                        formControlName="Salon">
+                      <label class="mt-2 ps-2">Salon</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <div class="checkbox checkbox2 p-2 rounded-2" [ngClass]="
+                  !formControls['Gym'].value?'bg-white':'bg-transparent'
+                  ">
+                    <div class="text-center">
+                      <input type="checkbox" class="form-check-input p-3" id="validationFormCheck1"
+                        formControlName="Gym">
+                      <label class="mt-2 ps-2">Gym</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <div class=" checkbox checkbox3 p-2 rounded-2" [ngClass]="
+                  !formControls['Spa'].value?'bg-white':'bg-transparent'
+                  ">
+                    <div class="text-center">
+                      <input type="checkbox" class="form-check-input p-3" id="validationFormCheck1"
+                        formControlName="Spa">
+                      <label class="mt-2 ps-2">Spa</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <div class="checkbox checkbox4 p-2 rounded-2" [ngClass]="
+                  !formControls['Clinic'].value?'bg-white':'bg-transparent'
+                  ">
+                    <div class="text-center">
+                      <input type="checkbox" class="form-check-input p-3" id="validationFormCheck1"
+                        formControlName="Clinic">
+                      <label class="mt-2 ps-2">Clinic</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                  <div class="pe-2">
+                    <label class="mb-1">Governorate</label>
+                    <div class="w-100 rounded-2" [ngClass]="{
+                      'notValid':
+                      formControls['cities'].errors &&
+                      formControls['cities'].touched
+                      }">
+                      <p-dropdown [options]="cities" optionLabel="name" [filter]="true" filterBy="name"
+                        placeholder="select Governorate" formControlName="cities"></p-dropdown>
+                    </div>
+
+                  </div>
+                  <div class="error" *ngIf=" formControls['cities'].errors &&
+            formControls['cities'].touched">
+                    <span>Please select city</span>
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="ps-md-2">
+                    <label class="mb-1">District</label>
+                    <div class="w-100 rounded-2" [ngClass]="{
+                      'notValid':
+                      formControls['District'].errors &&
+                      formControls['District'].touched
+                      }">
+                      <p-dropdown [options]="district" optionLabel="name" [filter]="true" filterBy="name"
+                        placeholder="select District" formControlName="District"></p-dropdown>
+                    </div>
+                  </div>
+                  <div class="error" *ngIf=" formControls['District'].errors &&
+            formControls['District'].touched">
+                    <span>Please select District</span>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                  <div class="pe-2">
+                    <label class="mb-1">How did you know us?</label>
+                    <div class="w-100 rounded-2" [ngClass]="{
+                      'notValid':
+                      formControls['ways'].errors &&
+                      formControls['ways'].touched
+                      }">
+                      <p-dropdown [options]="ways" optionLabel="name" [filter]="true" filterBy="name"
+                        placeholder="select option" formControlName="ways"></p-dropdown>
+                    </div>
+                  </div>
+                  <div class="error" *ngIf=" formControls['ways'].errors &&
+            formControls['ways'].touched">
+                    <span>Please select ways</span>
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="ps-md-2">
+                    <label class="mb-1">Are you currently using system ?</label>
+                    <div class="d-flex">
+                      <div class="pe-2 radio">
+                        <input class="form-check-input" type="radio" value="yes" id="flexRadioDefault1"
+                          formControlName="accept">
+                        <label class="form-check-label mt-2 ps-2" for="flexRadioDefault1">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="ps-2 radio">
+                        <input class="form-check-input " type="radio" value="no" id="flexRadioDefault2"
+                          formControlName="accept">
+                        <label class="form-check-label mt-2 ps-2" for="flexRadioDefault2">
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6 offset-md-6 mb-3">
+                  <button class="btn  d-block py-2 ms-auto" type="submit">
+                    CREATE ACCOUNT <i class="fa-solid fa-arrow-right ps-4"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,174 @@
+.main {
+  background: #F5F6F9 0% 0%;
+  opacity: 1;
+
+  .image {
+    background-image: linear-gradient(180deg, #6959CB00 0%, #635CA8 100%), url('/assets/images/main-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: 0px 4px 16px #DDDDE014;
+    opacity: 1;
+    min-height: 100vh;
+
+    .child {
+      top: 60%;
+      width: 330px;
+      background: #FFFFFF 0% 0%;
+      border: 1px #FFFFFF solid;
+      border-radius: 16px 16px 57px 16px;
+
+      .child-image img {
+        transform: translate(-50%, -50%)
+      }
+
+      .child-text {
+        transform: translate(-20%);
+        color: #383838;
+        letter-spacing: 0px;
+
+        p {
+          font-size: 13px;
+        }
+
+        h6 {
+          font-size: 16px;
+        }
+
+        span {
+          font-size: 13px;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .circle {
+      width: 6px;
+      height: 6px;
+      border: 1px solid white;
+    }
+
+    .pill {
+      width: 30px;
+      height: 6px;
+      border: 1px solid white;
+      background-color: white;
+    }
+  }
+
+  .form {
+    min-height: 100vh;
+    padding: 0px 5%;
+
+    .first-section {
+      letter-spacing: 0px;
+
+      p {
+        font-size: 14px;
+        color: #38383880;
+
+        span {
+          font-size: 14px;
+          color: #635CA8;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .second-section {
+      letter-spacing: 0px;
+
+      h2 {
+        color: #454C66;
+      }
+
+      .line {
+        width: 200px;
+        height: 35px;
+        border: solid 5px #6AC7BB;
+        border-color: #6AC7BB transparent transparent transparent;
+        border-radius: 80%/70px 100px 0 0;
+        margin-left: 120px;
+      }
+    }
+
+    .third-section {
+      p {
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #747A88;
+      }
+    }
+
+
+    form {
+      label {
+        font-size: 15px;
+        letter-spacing: 0px;
+        color: #454C66;
+
+        span {
+          font-size: 16px;
+          font-weight: 600;
+          color: #3482F4;
+          cursor: pointer;
+        }
+
+
+      }
+
+
+
+      input {
+        padding: 10px;
+      }
+
+      .list {
+        width: 30%;
+        font-size: 13px;
+      }
+
+      .showPassword {
+        top: 50%;
+        right: 6%;
+        transform: translate(50%, -50%);
+        cursor: pointer;
+      }
+
+
+    }
+
+  }
+}
+
+
+
+@media screen and (min-width: 550px) {
+  .child {
+    left: 50%;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .child {
+    left: 20%;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
+
+::ng-deep .p-dropdown .p-dropdown-trigger {
+  display: none !important;
+}
+
+::ng-deep .p-dropdown .p-dropdown-label.p-placeholder {
+  width: 100px;
+}
+
+

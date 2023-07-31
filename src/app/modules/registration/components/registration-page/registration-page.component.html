@@ -1,0 +1,177 @@
+<div class="container-fluid">
+  <div class="row main">
+    <div class="col-lg-4 image position-relative">
+      <div class="position-absolute child d-flex">
+        <div class="child-image">
+          <img src="/assets/images/Group 52.svg" alt="icon1">
+        </div>
+        <div class="child-text my-3 ">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+          <h6 class="mt-2 mb-0 pb-0 fw-bold">
+            Salma Mohamed
+          </h6>
+          <span>Founder, Soliter Salon</span>
+        </div>
+
+
+      </div>
+      <div class="d-flex h-100 align-items-end justify-content-end pb-3">
+        <div class="circle rounded-circle mx-1">
+        </div>
+        <div class="circle rounded-circle mx-1">
+        </div>
+        <div class="pill rounded-pill mx-1">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 form">
+      <div class="container">
+        <div class="p-5 ">
+          <div class="first-section d-flex justify-content-end">
+            <p>Having troubles? <span class="fw-bold">Get Help</span></p>
+          </div>
+          <div class="second-section">
+            <h2 class="fw-bold">Start your business now</h2>
+            <div class="line"></div>
+          </div>
+          <div class="third-section">
+            <p>
+              Creating your company is just a few steps away,
+              <br>
+              Enter your email address to continue.
+            </p>
+          </div>
+          <div class="myForm">
+            <form [formGroup]="form" (ngSubmit)="submit(form)">
+              <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                  <div class="pe-2">
+                    <label class="mb-1">First Name</label>
+                    <input type="text" class="form-control " id="fName" placeholder="Enter your first name"
+                      formControlName="firstName" [ngClass]="{
+                      'invalid':
+                      formControls['firstName'].errors &&
+                      formControls['firstName'].touched
+                      }">
+                  </div>
+                  <div class="error" *ngIf=" formControls['firstName'].errors &&
+                  formControls['firstName'].touched">
+                    <span>Please enter letters only</span>
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="ps-md-2">
+                    <label class="mb-1">Last Name</label>
+                    <input type="text" class="form-control " id="lName" placeholder="Enter your last name"
+                      formControlName="lastName" [ngClass]="{
+                      'invalid':
+                      formControls['lastName'].errors &&
+                      formControls['lastName'].touched
+                      }">
+                  </div>
+                  <div class="error" *ngIf=" formControls['lastName'].errors &&
+                  formControls['lastName'].touched">
+                    <span>Please enter letters only</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                  <div class="pe-2">
+                    <label class="mb-1">Email Address</label>
+                    <input type="text" class="form-control " id="email" placeholder="Enter your email"
+                      formControlName="email" [ngClass]="{
+                      'invalid':
+                      formControls['email'].errors &&
+                      formControls['email'].touched
+                      }">
+                  </div>
+                  <div class="error" *ngIf=" formControls['email'].errors &&
+                  formControls['email'].touched">
+                    <span>Please enter a vaild email address</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="ps-md-2">
+                    <label class="mb-1">Phone Number</label>
+                    <div class="d-flex bg-white">
+                      <p-dropdown [options]="allCountries" [(ngModel)]="selectedCountry">
+                        <ng-template pTemplate="selectedItem">
+                          <div class="d-flex align-items-center  gap-2" *ngIf="selectedCountry">
+                            <img [src]="selectedCountry.flag" style="width: 18px" />
+                            <div>{{ selectedCountry.code }}</div>
+                          </div>
+                        </ng-template>
+                        <ng-template let-country pTemplate="item">
+                          <div class="d-flex align-items-center gap-2">
+                            <img [src]="country.flag" style="width: 18px" />
+                            <div>{{ country.code }}</div>
+                          </div>
+                        </ng-template>
+                      </p-dropdown>
+                      <input type="text" class="form-control" id="Phone" placeholder="Enter your phone"
+                        formControlName="phoneNumber" [ngClass]="{
+                        'invalid':
+                        formControls['phoneNumber'].errors &&
+                        formControls['phoneNumber'].touched
+                        }">
+                    </div>
+                    <div class="error" *ngIf=" formControls['phoneNumber'].errors &&
+                    formControls['phoneNumber'].touched">
+                      <span>Please enter valid number</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                  <div class="pe-2 ">
+                    <label class="mb-1">Password</label>
+                    <div class="position-relative">
+                      <input type="password" id="password" [type]="showPassword ? 'text' : 'password'"
+                        class="form-control" placeholder="Enter your password" formControlName="password" [ngClass]="{
+                        'invalid':
+                        formControls['password'].errors &&
+                        formControls['password'].touched
+                        }">
+                      <div class=" position-absolute showPassword">
+                        <i class="fa-solid fa-eye" *ngIf="showPassword" (click)="changeType()"></i>
+                        <i class="fa-solid fa-eye-slash" *ngIf="!showPassword" (click)="changeType()"></i>
+                      </div>
+                    </div>
+                    <div class="error" *ngIf=" formControls['password'].errors &&
+                    formControls['password'].touched">
+                      <span>Please enter 8 digits of A,a,12,!@</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="pe-2 ">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkBox" formControlName="isChecked">
+                      <label class="form-check-label ps-1" for="checkBox">
+                        Agree to the <span>Privacy Policy</span> and
+                        <br>
+                        <span>
+                          Terms & Conditions
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <button class="btn  d-block py-2 ms-auto" type="submit">
+                    NEXT <i class="fa-solid fa-arrow-right ps-4"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
